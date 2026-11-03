@@ -1,0 +1,335 @@
+/* ==========================================================================
+   CV Professionnel - Josias AMOUSSOU
+   Feuille de style moderne, responsive et prête pour l'impression (A4)
+   ========================================================================== */
+
+:root {
+    --primary: #0f172a;
+    --primary-light: #1e293b;
+    --accent: #2563eb;
+    --accent-soft: #dbeafe;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --bg-page: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-subtle: #f8fafc;
+    --border-color: #e2e8f0;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --shadow-lg: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 2.5rem 1rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cv-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+/* 1. Section Titre / En-tête */
+.cv-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #ffffff;
+    padding: 2.75rem 3rem;
+    position: relative;
+    border-bottom: 4px solid var(--accent);
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+}
+
+.profile-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, #3b82f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.header-info h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.header-subtitle {
+    font-size: 1.15rem;
+    color: #93c5fd;
+    font-weight: 500;
+}
+
+.contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.92rem;
+    color: #e2e8f0;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-item a {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Sections Générales du CV */
+.cv-section {
+    padding: 2rem 3rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cv-section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 22px;
+    background-color: var(--accent);
+    border-radius: 3px;
+}
+
+/* 2. Section Courte Description (Profil) */
+.description-box {
+    background-color: var(--bg-subtle);
+    border-left: 4px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--text-main);
+    font-size: 1.02rem;
+}
+
+/* 3 & 4. Sections Formations et Expériences (Timeline) */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border-color);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    border: 2px solid var(--bg-card);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.timeline-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    background-color: var(--accent-soft);
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+}
+
+.timeline-org {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.timeline-list {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.timeline-list li {
+    margin-bottom: 0.3rem;
+}
+
+/* 5. Section Compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.skill-card {
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+}
+
+.skill-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.85rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    font-size: 0.85rem;
+    font-weight: 500;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+}
+
+/* 6. Section Associations & Engagements */
+.assoc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.assoc-card {
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+}
+
+.assoc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.assoc-role {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.assoc-org {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.assoc-desc {
+    font-size: 0.92rem;
+    color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+    .cv-header,
+    .cv-section {
+        padding: 1.5rem;
+    }
+
+    .header-info h1 {
+        font-size: 1.75rem;
+    }
+}
+
+@media print {
+    body {
+        background-color: #ffffff;
+        padding: 0;
+    }
+
+    .cv-container {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+    }
+}
